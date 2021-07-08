@@ -1,0 +1,38 @@
+<!--
+  Generated template for the AddItemPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>AddItem</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-item>
+    <ion-label floating>Name</ion-label>
+    <ion-input type="text" [(ngModel)]="name"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Price</ion-label>
+    <ion-input type="text" [(ngModel)]="price"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label #qty>Quantity</ion-label>
+    <ion-select  interface="popover" style="margin-left: 10px" [(ngModel)]="quantity">
+      <ion-option value="{{number}}" *ngFor="let number of [1,2,3,4,5,6,7,8,9,10]">{{number}}</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-fab bottom right>
+    <button ion-fab color="secondary" (click)="addItem()"><ion-icon name="checkmark"></ion-icon></button>
+  </ion-fab>
+  <ion-fab bottom left>
+    <button ion-fab color="danger" (click)="dismissAddModal()"><ion-icon name="close"></ion-icon></button>
+  </ion-fab>
+</ion-content>
